@@ -1,0 +1,53 @@
+HALOSCRIPT pseudo-LISP encoder to bytecode
+
+* Requirements, Scope Definition
+
+Note: Not necessarily in order of priority
+** 1. Constants
+		 a. (+ 1 2) becomes 3
+
+** 2. Variables
+     a. Variables are all of accepted Haloscript types.
+     b. Do not perform any preprocessing on Variables
+
+** 3. Function Syntax
+     a. (
+     b. <predicate> defining function type
+        i. continuous
+        ii. dormant
+        iii. startup
+        iv. stub 
+     c. (if applicable) <return value>
+     d. <function name> 
+     e. <function body>
+     f. )
+
+** 4. Encoding/Compilation
+	 	 a. No file dependencies - self-contained scripts
+		 b. Encoding based on Halo CE's binary format.
+		 c. Opening actual Halo files not required, just need to 
+   open script files, output valid byte code
+     d. Comment support ; for single-line and ;* *; for multiline
+
+
+* Project Organization
+	
+** 1. Software Design
+
+   Intended to be as detailed as possible and describe the 
+sections and their functions as detailed as possible. This 
+document and requirements should be portable between ASM,
+C, and C++.
+
+     a. Functions and associated bytecodes.
+        i. Function name definition for function recognition
+        ii. Name-to-bytecode.
+        iii. Bytecode list
+
+     b. File loader
+        i. Open a file
+        ii. Allocate appropriate memory
+        iii. Find the first open parenthesis and search for a
+        valid string. 
+
+     c. Function Encoder 
