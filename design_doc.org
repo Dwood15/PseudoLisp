@@ -51,3 +51,5 @@ C, and C++.
         valid string. 
 
      c. Function Encoder 
+
+** 2. Project Operation and Interaction
